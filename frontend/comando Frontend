@@ -1,0 +1,43 @@
+
+npx create-react-app todo-tutorial
+npm install --save react-router
+npm install axios
+npm install react-icons --save
+npm start
+
+
+girlany@girlany:~/Projetos React Web/E-esportes-NDM/frontend/E-sports$ npm install axios
+
+added 4 packages, changed 1 package, and audited 1173 packages in 33s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+163 vulnerabilities (15 low, 76 moderate, 53 high, 19 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+girlany@girlany:~/Projetos React Web/E-esportes-NDM/frontend/E-sports$ npm install react-icons --save
+
+added 1 package, and audited 1174 packages in 7s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+164 vulnerabilities (15 low, 76 moderate, 54 high, 19 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+girlany@girlany:~/Projetos React Web/E-esportes-NDM/frontend/E-sports$ 
+
+
