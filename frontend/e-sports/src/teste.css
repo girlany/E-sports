@@ -1,7 +1,7 @@
 
 
 button {
-  margin-left: 1rem;
+  margin-left: 0.2rem;
   border: none;
   background-color: #abb7cfda;
   width: 160px;
@@ -37,7 +37,7 @@ button {
 }
 .todos {
   background-color: #876e91a2;
-  width: 830px;
+  width: 970px;
   height: 300px;
   overflow-y: scroll;
 }
@@ -67,14 +67,14 @@ button {
   font-size: 3rem;
   font-weight: bold;
 
-
+ 
 
 }
 
 
 .todo p {
-  min-width: 200px;
-  max-width: 200px;
+  min-width: 170px;
+  max-width: 300px;
   text-align: start;
  
   font-size: 1rem;
@@ -92,7 +92,7 @@ button {
 }
 .header {
   background-color: #042f66;
-  width: 830px;
+  width: 970px;
   height: 60px;
   box-shadow: 0px 0px 21px -7px rgba(0, 0, 0, 0.3);
   margin: 1px;

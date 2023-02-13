@@ -67,6 +67,8 @@ function About2() {
   async function handleWithEditButtonClick(todo) {
     setSelectedTodo(todo);
     setInputVisility(true);
+    setInputValue(todo.name);
+    
   }
 
   async function modifyStatusTodo(todo) {

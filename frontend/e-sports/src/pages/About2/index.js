@@ -17,27 +17,6 @@ import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function About() {
 
 
-
-
-    /*  
-    return (
-      <div>
-     
-        <Link to="/about">
-          <button>Click</button>
-        </Link>
-  
-        <Routes>
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </div>
-    );
-     
-    */
-
-
-
-
   const Todos = ({ todos }) => {
 
     return (
@@ -47,9 +26,10 @@ function About() {
           return (
             <div className="todo">
 
-              <p> Nome: {jogador.nome}</p>
-
-              <p>Idade: {jogador.idade}</p>
+              <p> Nome:  {jogador.nome}</p>
+              <p> Idade: {jogador.idade}</p>
+              <p> Time: {jogador.time_id}</p>
+        
   
               <button  onClick={() => handleWithEditButtonClick(jogador)}>
                   <AiOutlineEdit size={30} color={"#063970"}></AiOutlineEdit>
@@ -79,6 +59,9 @@ function About() {
     const response = await axios.put("http://localhost:3333/jogador", {
       id: selectedTodo.id,
       nome: inputValue,
+      idade: inputValue2,
+      time_id: inputValue3,
+      
      
       
 
@@ -90,6 +73,11 @@ function About() {
   }
   async function handleWithEditButtonClick(jogador) {
     setSelectedTodo(jogador);
+    getTodos();
+    setInputValue(jogador.nome);
+    setInputValue2(jogador.idade);
+    setInputValue3(jogador.time_id);
+    
     setInputVisility(true);
   }
 
@@ -106,32 +94,18 @@ function About() {
   async function createTodo() {
     const response = await axios.post("http://localhost:3333/jogador", {
       nome: inputValue,
+      idade: inputValue2,
+      time_id: inputValue3,
+      
+      
+      
     });
     getTodos();
     setInputVisility(!inputVisbility);
     setInputValue("");
   }
 
-   /*
-  async function createTodo() {
-    const response = await axios.post("http://localhost:3333/jogador", {
-      nome: inputValue,
-   
-    });
-    getTodos();
-    setInputVisility(!inputVisbility);
-    setInputValue("");
-  }
-  /*
-  async function createTodo() {
-    const response = await axios.post("http://localhost:3333/todos", {
-      name: inputValue,
-    });
-    getTodos();
-    setInputVisility(!inputVisbility);
-    setInputValue("");
-  }
-  */
+
 
   async function handleWithNewButton() {
     
@@ -146,8 +120,11 @@ function About() {
     console.log(response.data);
   }
 
+  
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const [inputValue2, setInputValue2] = useState("");
+  const [inputValue3, setInputValue3] = useState("");
   const [inputVisbility, setInputVisility] = useState(false);
   const [selectedTodo, setSelectedTodo] = useState();
 
@@ -157,25 +134,103 @@ function About() {
   }, []);
 
 
+  //const Todos2 = ({ todoss2 }) => {
+  //}
+ ///       
 
   return (
+
     <div className="App">
+
+
+  
+  
+
       <header className="container">
       <div className="header">
           <h1>Jogadores</h1>
         </div>
 
         <Todos todos={todos}></Todos>
-        <input 
-              value={inputValue}
+
+
+
+
+        <p
+        
+        style={{ display: inputVisbility ? "block" : "none" }}
+        onChange={(event) => {
+           setInputValue(event.target.value);
+        }}
+   
+        
+        
+        >Nome</p>
+
+
+        <input
+                 value={inputValue}
+               style={{ display: inputVisbility ? "block" : "none" }}
+             onChange={  (event) => {
+                
+
+                setInputValue(event.target.value);
+             }
+            
+            
+            } 
+        
+             
+             className='inputName'></input>
+
+
+<p
+        
+        style={{ display: inputVisbility ? "block" : "none" }}
+        onChange={(event) => {
+           setInputValue(event.target.value);
+           
+        }}
+   
+        
+        
+        >
+          Idade
+        </p>
+
+
+          <input 
+              value={inputValue2}
               style={{ display: inputVisbility ? "block" : "none" }}
              onChange={(event) => {
-                setInputValue(event.target.value);
+                setInputValue2(event.target.value);
              }}
         
-        className='inputName'></input>
+             className='inputName'></input>
 
 
+<p
+        
+        style={{ display: inputVisbility ? "block" : "none" }}
+        onChange={(event) => {
+           setInputValue(event.target.value);
+        }}
+   
+        
+        
+        >Time</p>
+
+            <input 
+              value={inputValue3}
+              style={{ display: inputVisbility ? "block" : "none" }}
+             onChange={(event) => {
+                setInputValue3(event.target.value);
+             }}
+        
+             className='inputName'></input>
+
+
+    
 
         <button  onClick={
             inputVisbility
@@ -195,7 +250,7 @@ function About() {
 
   );
 
- 
+        
 
   
 
