@@ -15,13 +15,17 @@ const App = () => {
     return (
   
         <div className="teste2">
+         
 
 <div className="teste">
+
+<h1 className="hh1">Registro E-sports</h1>
 
 <Router>
     <MyButton id="main-button" to="" />
     <MyButton  to="about2" />
     <MyButton  to="about" />
+  
     <Routes>
    
      
@@ -38,9 +42,10 @@ const App = () => {
 </Router>
 
 
+
 </div>
                
-               <h1 className="hh1">Registro E-sports</h1>
+           
                
         </div>
        

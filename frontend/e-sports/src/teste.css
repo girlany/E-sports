@@ -17,7 +17,7 @@ button {
 .btn1 {
 
   border: none;
-  margin-left: 3%;
+  margin-left: 1%;
  
 }
 
@@ -27,9 +27,9 @@ button {
 }
 
 .container {
-  margin-top:1%;
-  background-color: #dae0f5;
-  min-height: 90vh;
+  margin-top:1.1%;
+  background-color: #98a2c9;
+  min-height: 88vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +38,7 @@ button {
 .todos {
   background-color: #876e91a2;
   width: 970px;
-  height: 300px;
+  height: 323px;
   overflow-y: scroll;
 }
 
@@ -57,24 +57,25 @@ button {
   justify-content: center;
 }
 
-.hh1 {
 
-  margin-top: 0.1rem;
-  margin-bottom: -1rem;
+
+.hh1 {
+  padding-top: 0.6%;
+  margin-left: 7rem;
+  margin-top: 0rem;
+  margin-bottom: -3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
   font-weight: bold;
 
- 
-
 }
 
 
 .todo p {
   min-width: 170px;
-  max-width: 300px;
+  max-width: 500px;
   text-align: start;
  
   font-size: 1rem;

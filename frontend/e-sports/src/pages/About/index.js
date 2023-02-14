@@ -27,8 +27,12 @@ function About2() {
                className="checkbox"
                   style={{ backgroundColor: todo.status ? "#A879E6" : "white" }}
                 ></button>
+
+              <p>#ID {todo.id}</p>
   
               <p>{todo.name}</p>
+              
+              
   
               <button onClick={() => handleWithEditButtonClick(todo)}>
                   <AiOutlineEdit size={30} color={"#063970"}></AiOutlineEdit>
@@ -138,6 +142,9 @@ function About2() {
              }}
         
         className='inputName'></input>
+
+
+
         <button  onClick={
             inputVisbility
               ? selectedTodo

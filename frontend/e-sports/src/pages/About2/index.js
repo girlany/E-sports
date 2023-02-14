@@ -11,9 +11,6 @@ import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 
-
-
-
 function About() {
 
 
@@ -22,15 +19,41 @@ function About() {
     return (
       <div className="todos">
         {todos.map((jogador) => {
-  
+
+          
+
+          // if(pedido.alimento == 'Coxinha'){
+           //return pedido.alimento = 'Não temos no momento';
+           //}
+
+          //if(jogador.time_id >'5'){
+            //setCount(count + 1);
+
+            //console.log(todos);
+
+           //return  setCount(count + 1);
+           
+           //return jogador.time_id = 'Não temos no momento';
+
+
+          //}
+
           return (
+
+            
             <div className="todo">
 
+      
+              
+          
+              
               <p> Nome:  {jogador.nome}</p>
+
               <p> Idade: {jogador.idade}</p>
-              <p> Time: {jogador.time_id}</p>
-        
-  
+              <p> id_time:  {jogador.id_time}</p>
+              
+            
+            
               <button  onClick={() => handleWithEditButtonClick(jogador)}>
                   <AiOutlineEdit size={30} color={"#063970"}></AiOutlineEdit>
                 </button>
@@ -39,19 +62,21 @@ function About() {
                 </button>
             </div>
 
-
-              
-  
           );
 
     
         })}
+
+     
     
       </div>
     );
 
 
   };
+
+ 
+
 
 
 
@@ -97,12 +122,11 @@ function About() {
       idade: inputValue2,
       time_id: inputValue3,
       
-      
-      
     });
     getTodos();
     setInputVisility(!inputVisbility);
     setInputValue("");
+
   }
 
 
@@ -118,10 +142,23 @@ function About() {
     const response = await axios.get("http://localhost:3333/jogador");
     setTodos(response.data);
     console.log(response.data);
+
+   
   }
 
-  
+
+   
+  async function getTodos2(todo) {
+    const response = await axios.get("http://localhost:3333/todos");
+    setTodos(response.data);
+    console.log(response.data);
+  }
+
+
+
   const [todos, setTodos] = useState([]);
+  
+
   const [inputValue, setInputValue] = useState("");
   const [inputValue2, setInputValue2] = useState("");
   const [inputValue3, setInputValue3] = useState("");
@@ -129,8 +166,22 @@ function About() {
   const [selectedTodo, setSelectedTodo] = useState();
 
 
+  const [count, setCount] = useState(0);
+
+  // Similar ao componentDidMount e componentDidUpdate:
+  //useEffect(() => {
+    // Atualiza o título do documento usando a API do browser
+    //document.title = `Você clicou ${count} vezes`; nome para pag 
+  //});
+
+
   useEffect(() => {
+     // Atualiza o título do documento usando a API do browser
+   // document.title = `Você clicou ${count} vezes`;
     getTodos();
+  
+    //getTodoss();
+    
   }, []);
 
 
@@ -138,13 +189,77 @@ function About() {
   //}
  ///       
 
+
+// const Todoss = ({ todos }) => {
+
+  //return (
+    ///<div className="todos">
+      //{todos.map((jogador) => {
+
+
+//<select>
+ /// <option value="grapefruit">{jogador.time_id}</option>
+  ///<option value="lime">Lime</option>
+  //<option selected value="coconut">Coconut</option>
+  //<option value="mango">Mango</option>
+//</select>
+
+  
+  //    })}
+  
+    //</div>
+  //);
+
+
+//};
+
+
+//import React, { useState, useEffect } from 'react';
+
+//function Exemplo() {
+  //const [count, setCount] = useState(0);
+
+  // Similar ao componentDidMount e componentDidUpdate:
+  //useEffect(() => {
+    // Atualiza o título do documento usando a API do browser
+    //document.title = `Você clicou ${count} vezes`;
+  //});
+
+  //return (
+    //<div>
+      //<p>Você clicou {count} vezes</p>
+      //<button onClick={() => setCount(count + 1)}>
+        //Clique aqui
+      //</button>
+    //</div>
+  //);
+//}
+
+
+    ///<select>
+    //{todos.map((jogador) => (
+
+
+   ///<option value={jogador.id}>{jogador.time_id}</option>
+
+   //))}
+    ///</select>
+
+     ////<select>
+    ////{todos.map((todo) => (
+ 
+     //<option value={todo.id}>{todo.name}</option>
+    ///))}
+  ///</select>
+
+
+
+
+
   return (
 
     <div className="App">
 
-
-  
-  
 
       <header className="container">
       <div className="header">
@@ -221,16 +336,27 @@ function About() {
         >Time</p>
 
             <input 
+            
               value={inputValue3}
               style={{ display: inputVisbility ? "block" : "none" }}
              onChange={(event) => {
+
+              //if(event.target.value <= 5){
+
                 setInputValue3(event.target.value);
+
+              //}
+              
              }}
         
              className='inputName'></input>
 
+                 
+           
 
-    
+
+
+
 
         <button  onClick={
             inputVisbility
@@ -248,7 +374,10 @@ function About() {
     </div>
 
 
+
+
   );
+
 
         
 
