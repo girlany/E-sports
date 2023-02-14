@@ -7,7 +7,7 @@ import { createBrowserHistory } from "history";
 
 import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-//import { Link, Route, Routes } from 'react-router-dom'
+
 
 
 
@@ -22,21 +22,6 @@ function About() {
 
           
 
-          // if(pedido.alimento == 'Coxinha'){
-           //return pedido.alimento = 'Não temos no momento';
-           //}
-
-          //if(jogador.time_id >'5'){
-            //setCount(count + 1);
-
-            //console.log(todos);
-
-           //return  setCount(count + 1);
-           
-           //return jogador.time_id = 'Não temos no momento';
-
-
-          //}
 
           return (
 
@@ -152,14 +137,6 @@ function About() {
   }
 
 
-   
-  //async function getTodos2(todo) {
-    ///const response = await axios.get("http://localhost:3333/todos");
-    //setTodos(response.data);
-    //console.log(response.data);
-  //}
-
-
 
   const [todos, setTodos] = useState([]);
   
@@ -175,91 +152,14 @@ function About() {
 
   const [count, setCount] = useState(0);
 
-  // Similar ao componentDidMount e componentDidUpdate:
-  //useEffect(() => {
-    // Atualiza o título do documento usando a API do browser
-    //document.title = `Você clicou ${count} vezes`; nome para pag 
-  //});
 
 
   useEffect(() => {
-     // Atualiza o título do documento usando a API do browser
-   // document.title = `Você clicou ${count} vezes`;
+
     getTodos();
-  
-    //getTodoss();
+
     
   }, []);
-
-
-  //const Todos2 = ({ todoss2 }) => {
-  //}
- ///       
-
-
-// const Todoss = ({ todos }) => {
-
-  //return (
-    ///<div className="todos">
-      //{todos.map((jogador) => {
-
-
-//<select>
- /// <option value="grapefruit">{jogador.time_id}</option>
-  ///<option value="lime">Lime</option>
-  //<option selected value="coconut">Coconut</option>
-  //<option value="mango">Mango</option>
-//</select>
-
-  
-  //    })}
-  
-    //</div>
-  //);
-
-
-//};
-
-
-//import React, { useState, useEffect } from 'react';
-
-//function Exemplo() {
-  //const [count, setCount] = useState(0);
-
-  // Similar ao componentDidMount e componentDidUpdate:
-  //useEffect(() => {
-    // Atualiza o título do documento usando a API do browser
-    //document.title = `Você clicou ${count} vezes`;
-  //});
-
-  //return (
-    //<div>
-      //<p>Você clicou {count} vezes</p>
-      //<button onClick={() => setCount(count + 1)}>
-        //Clique aqui
-      //</button>
-    //</div>
-  //);
-//}
-
-
-    ///<select>
-    //{todos.map((jogador) => (
-
-
-   ///<option value={jogador.id}>{jogador.time_id}</option>
-
-   //))}
-    ///</select>
-
-     ////<select>
-    ////{todos.map((todo) => (
- 
-     //<option value={todo.id}>{todo.name}</option>
-    ///))}
-  ///</select>
-
-
 
 
 
@@ -364,11 +264,11 @@ function About() {
             style={{ display: inputVisbility ? "block" : "none" }}
            onChange={(event) => {
 
-            //if(event.target.value <= 5){
+            
 
               setInputValue4(event.target.value);
 
-            //}
+            
             
            }}
       
