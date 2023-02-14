@@ -1,13 +1,13 @@
-
+//import logo from './logo.svg';
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
-
+//import './App copy.css';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { createBrowserHistory } from "history";
 
 import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-
+//import { Link, Route, Routes } from 'react-router-dom'
 
 
 
@@ -20,6 +20,23 @@ function About() {
       <div className="todos">
         {todos.map((jogador) => {
 
+          
+
+          // if(pedido.alimento == 'Coxinha'){
+           //return pedido.alimento = 'Não temos no momento';
+           //}
+
+          //if(jogador.time_id >'5'){
+            //setCount(count + 1);
+
+            //console.log(todos);
+
+           //return  setCount(count + 1);
+           
+           //return jogador.time_id = 'Não temos no momento';
+
+
+          //}
 
           return (
 
@@ -69,6 +86,7 @@ function About() {
       nome: inputValue,
       idade: inputValue2,
       id_time: inputValue3,
+      time_id: inputValue4,
       
      
       
@@ -84,7 +102,9 @@ function About() {
     getTodos();
     setInputValue(jogador.nome);
     setInputValue2(jogador.idade);
-    setInputValue3(jogador.time_id);
+    setInputValue3(jogador.id_time);
+    setInputValue4(jogador.time_id);
+    
     
     setInputVisility(true);
   }
@@ -104,6 +124,8 @@ function About() {
       nome: inputValue,
       idade: inputValue2,
       id_time: inputValue3,
+      time_id: inputValue4,
+      
       
     });
     getTodos();
@@ -131,11 +153,11 @@ function About() {
 
 
    
-  async function getTodos2(todo) {
-    const response = await axios.get("http://localhost:3333/todos");
-    setTodos(response.data);
-    console.log(response.data);
-  }
+  //async function getTodos2(todo) {
+    ///const response = await axios.get("http://localhost:3333/todos");
+    //setTodos(response.data);
+    //console.log(response.data);
+  //}
 
 
 
@@ -145,19 +167,99 @@ function About() {
   const [inputValue, setInputValue] = useState("");
   const [inputValue2, setInputValue2] = useState("");
   const [inputValue3, setInputValue3] = useState("");
+  const [inputValue4, setInputValue4] = useState("");
+  
   const [inputVisbility, setInputVisility] = useState(false);
   const [selectedTodo, setSelectedTodo] = useState();
 
 
   const [count, setCount] = useState(0);
 
+  // Similar ao componentDidMount e componentDidUpdate:
+  //useEffect(() => {
+    // Atualiza o título do documento usando a API do browser
+    //document.title = `Você clicou ${count} vezes`; nome para pag 
+  //});
+
 
   useEffect(() => {
-
+     // Atualiza o título do documento usando a API do browser
+   // document.title = `Você clicou ${count} vezes`;
     getTodos();
- 
+  
+    //getTodoss();
     
   }, []);
+
+
+  //const Todos2 = ({ todoss2 }) => {
+  //}
+ ///       
+
+
+// const Todoss = ({ todos }) => {
+
+  //return (
+    ///<div className="todos">
+      //{todos.map((jogador) => {
+
+
+//<select>
+ /// <option value="grapefruit">{jogador.time_id}</option>
+  ///<option value="lime">Lime</option>
+  //<option selected value="coconut">Coconut</option>
+  //<option value="mango">Mango</option>
+//</select>
+
+  
+  //    })}
+  
+    //</div>
+  //);
+
+
+//};
+
+
+//import React, { useState, useEffect } from 'react';
+
+//function Exemplo() {
+  //const [count, setCount] = useState(0);
+
+  // Similar ao componentDidMount e componentDidUpdate:
+  //useEffect(() => {
+    // Atualiza o título do documento usando a API do browser
+    //document.title = `Você clicou ${count} vezes`;
+  //});
+
+  //return (
+    //<div>
+      //<p>Você clicou {count} vezes</p>
+      //<button onClick={() => setCount(count + 1)}>
+        //Clique aqui
+      //</button>
+    //</div>
+  //);
+//}
+
+
+    ///<select>
+    //{todos.map((jogador) => (
+
+
+   ///<option value={jogador.id}>{jogador.time_id}</option>
+
+   //))}
+    ///</select>
+
+     ////<select>
+    ////{todos.map((todo) => (
+ 
+     //<option value={todo.id}>{todo.name}</option>
+    ///))}
+  ///</select>
+
+
 
 
 
@@ -241,19 +343,43 @@ function About() {
         >Time</p>
 
             <input 
-            
+              type={"number"}
               value={inputValue3}
               style={{ display: inputVisbility ? "block" : "none" }}
              onChange={(event) => {
 
-     
+              //if(event.target.value <= 5){
 
                 setInputValue3(event.target.value);
 
+              //}
               
              }}
         
              className='inputName'></input>
+
+<input 
+            
+            value={inputValue4}
+            style={{ display: inputVisbility ? "block" : "none" }}
+           onChange={(event) => {
+
+            //if(event.target.value <= 5){
+
+              setInputValue4(event.target.value);
+
+            //}
+            
+           }}
+      
+           className='inputName'></input>
+
+
+                 
+           
+
+
+
 
 
         <button  onClick={
